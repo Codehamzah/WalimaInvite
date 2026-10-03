@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Hamzah Jafri &amp; Mariya Siddiqui — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Great+Vibes&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0E0A0F; --wine:#2B0E1D; --wine2:#431528; --card:#18101A; --line:#3A2A36;
+  --gold:#C9A66B; --rose:#D07A90; --text:#EFE6DA; --muted:#A99BA3;
+  --script:"Great Vibes",cursive;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--ink) radial-gradient(ellipse at 50% 0,#1d0c18 0,var(--ink) 60%) fixed;color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+body.lock{overflow:hidden;height:100%}
+h1,h2,h3,p{margin:0}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,8vw,2.6rem);line-height:1.15}
+main{max-width:30rem;margin:0 auto;position:relative;z-index:1}
+section{padding:4.5rem 1.5rem;text-align:center}
+.small{font-size:.85rem;color:var(--muted);letter-spacing:.04em}
+.gold{color:var(--gold)}
+.rule{width:4rem;height:1px;background:var(--gold);margin:1.5rem auto;opacity:.7}
+
+/* ---------- Curtain intro ---------- */
+#curtain{position:fixed;inset:0;z-index:50;display:grid;place-items:center;pointer-events:auto}
+.panel{position:absolute;top:0;bottom:0;width:50.5%;transition:transform 2.4s cubic-bezier(.7,0,.25,1);
+  background:
+   repeating-linear-gradient(90deg,rgba(0,0,0,.35) 0 6px,rgba(255,255,255,.05) 14px,rgba(0,0,0,.3) 26px,transparent 34px),
+   linear-gradient(180deg,var(--wine2),var(--wine) 70%,#1a0812)}
+.panel.l{left:0;border-right:2px solid var(--gold);box-shadow:inset -18px 0 30px rgba(0,0,0,.45)}
+.panel.r{right:0;border-left:2px solid var(--gold);box-shadow:inset 18px 0 30px rgba(0,0,0,.45)}
+.valance{position:absolute;top:0;left:0;right:0;height:3.2rem;z-index:2;transition:transform 1.4s ease .6s;
+  background:linear-gradient(180deg,#2c0f1e,var(--wine2));border-bottom:2px solid var(--gold);
+  box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.open .l{transform:translateX(-102%)} .open .r{transform:translateX(102%)} .open .valance{transform:translateY(-110%)}
+.open{pointer-events:none}
+.tap{position:relative;z-index:3;text-align:center;transition:opacity .6s ease}
+.open .tap{opacity:0}
+.tap .script{font-family:var(--script);font-size:3rem;line-height:1.1;color:var(--text)}
+.tap p{color:var(--muted);margin:.5rem 0 2rem}
+.tap .small{font-size:1.15rem;letter-spacing:.05em}
+button,.btn{font:inherit;cursor:pointer;color:var(--text);background:transparent;border:1px solid var(--gold);padding:.8rem 2rem;border-radius:999px;text-decoration:none;display:inline-block;transition:background .4s,color .4s}
+button:hover,.btn:hover{background:var(--gold);color:#17100A}
+button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.tap button{animation:glow 3s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 8px rgba(201,166,107,.12)}}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:5rem}
+.bless{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--muted);max-width:22rem;margin:0 auto}
+.names{font-family:var(--script);font-weight:400;font-size:clamp(2.35rem,10vw,3.35rem);line-height:1.05;margin:1.5rem 0 1rem;white-space:nowrap}
+.names span{display:block}
+.names .of{font-family:var(--sans);font-weight:300;font-size:.78rem;line-height:1.35;color:var(--muted);margin-top:.75rem;letter-spacing:.02em}
+.names .and{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold);margin:.35rem 0}
+.hero .item{opacity:0;transform:translateY(14px);filter:blur(4px)}
+.started .hero .item{animation:rise 1.6s ease forwards}
+@keyframes rise{to{opacity:1;transform:none;filter:blur(0)}}
+.started .hero .item:nth-child(1){animation-delay:.4s}
+.started .hero .item:nth-child(2){animation-delay:1s}
+.started .hero .item:nth-child(3){animation-delay:1.6s}
+.started .hero .item:nth-child(4){animation-delay:2.2s}
+.started .hero .item:nth-child(5){animation-delay:2.8s}
+.parents{font-size:.95rem;color:var(--muted)}
+.parents b{display:block;font-family:var(--serif);font-weight:400;font-size:1.2rem;color:var(--text)}
+.cue{margin:2.5rem auto 0;width:1px;height:2.6rem;background:linear-gradient(var(--gold),transparent);animation:cue 2.6s ease-in-out infinite}
+@keyframes cue{50%{transform:translateY(8px);opacity:.4}}
+#dust{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+#dust i{position:absolute;top:-10px;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0;animation:fall linear infinite}
+@keyframes fall{0%{opacity:0;transform:translate(0,0)}10%{opacity:.55}90%{opacity:.3}100%{opacity:0;transform:translate(var(--dx),105vh)}}
+
+/* ---------- Scratch to reveal ---------- */
+.reveal-box{position:relative;margin:2rem auto 0;width:min(100%,21rem)}
+.hearts{display:flex;gap:.6rem;justify-content:center}
+.heart{flex:1;aspect-ratio:1/.95;display:grid;place-content:center;background:linear-gradient(160deg,var(--rose),#8E3550);
+  clip-path:path("M50 90 C-20 35 15 -5 50 25 C85 -5 120 35 50 90Z");clip-path:polygon(50% 100%,5% 55%,0 30%,10% 8%,30% 0,50% 18%,70% 0,90% 8%,100% 30%,95% 55%);
+  color:#fff;text-align:center;line-height:1.1;padding-top:.3rem}
+.heart b{font-family:var(--serif);font-weight:400;font-size:2rem;display:block}
+.heart small{font-size:.65rem;letter-spacing:.08em}
+#scratch{position:absolute;inset:-6px;width:calc(100% + 12px);height:calc(100% + 12px);border-radius:14px;touch-action:none;cursor:crosshair;transition:opacity 1.2s ease}
+#scratch.done{opacity:0;pointer-events:none}
+.skip{margin-top:1.2rem;background:none;border:0;color:var(--muted);text-decoration:underline;padding:.3rem;font-size:.85rem;border-radius:0}
+.skip:hover{background:none;color:var(--text)}
+#cd{display:flex;justify-content:center;gap:.7rem;margin-top:2rem;opacity:0;transform:translateY(10px);transition:opacity 1.2s ease .5s,transform 1.2s ease .5s}
+#cd.show{opacity:1;transform:none}
+#cd div{width:4.2rem;padding:.7rem 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+#cd b{display:block;font-family:var(--serif);font-weight:300;font-size:1.9rem;line-height:1.1;font-variant-numeric:tabular-nums}
+#cd small{font-size:.7rem;color:var(--muted)}
+.fulldate{font-family:var(--serif);font-size:1.4rem;color:var(--gold);margin-top:1.5rem;opacity:0;transition:opacity 1.2s ease 1s}
+.fulldate.show{opacity:1}
+
+/* ---------- Events ---------- */
+.event{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:2rem 1.5rem;margin-top:1.75rem}
+.event svg{width:5.5rem;height:4.5rem;fill:var(--gold);opacity:.9}
+.tag{display:inline-block;font-size:.8rem;color:var(--rose);border:1px solid rgba(208,122,144,.4);border-radius:999px;padding:.1rem .9rem;margin-bottom:1rem}
+.event h3{font-family:var(--serif);font-weight:300;font-size:1.7rem;line-height:1.2}
+.event .time{color:var(--gold);font-family:var(--serif);font-size:1.15rem;margin:.25rem 0 1rem}
+.event p.v{font-size:.95rem;color:var(--muted);margin-bottom:1.25rem}
+.btn.off{opacity:.55;border-style:dashed}
+
+/* ---------- Compliments ---------- */
+.names-list{list-style:none;margin:2rem 0 0;padding:0}
+.names-list li{font-family:var(--serif);font-size:1.35rem;padding:.55rem 0;border-bottom:1px solid var(--line);opacity:0;transform:translateX(-8px);transition:opacity .9s ease,transform .9s ease}
+.names-list li small{display:block;font-family:var(--sans);font-size:.75rem;color:var(--muted)}
+.names-list.on li{opacity:1;transform:none}
+
+footer{padding:3rem 1.5rem 4rem;text-align:center;color:var(--muted);font-size:.85rem}
+
+.rv{opacity:0;transform:translateY(12px);transition:opacity 1.2s ease,transform 1.2s ease}
+.rv.on{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}
+  #dust{display:none}
+}
+</style>
+</head>
+<body class="lock">
+
+<!-- Curtain intro -->
+<div id="curtain">
+  <div class="panel l"></div><div class="panel r"></div><div class="valance"></div>
+  <div class="tap">
+    <p class="small">DAWAT-E-WALIMA</p>
+    <div class="script">Hamzah Jafri &amp; Mariya Siddiqui</div>
+    <p>Draw the curtains to begin</p>
+    <button id="openBtn" type="button">Open invitation</button>
+  </div>
+</div>
+
+<div id="dust" aria-hidden="true"></div>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <p class="bless item">With the blessings of Almighty Allah and our beloved families, we joyfully invite you to the Walima of our beloved son.</p>
+    <h1 class="names item">
+      <span>Ahmad Hamzah Jafri</span>
+      <span class="of">S/O Mr. Ashraf Jafri</span>
+      <span class="and">and</span>
+      <span>Mariya Siddiqui</span>
+      <span class="of">D/O Mr. Rizwan Siddiqui</span>
+    </h1>
+    <div class="rule item" style="margin-top:.5rem"></div>
+    <div class="cue" aria-hidden="true"></div>
+  </section>
+
+  <!-- Scratch date + countdown -->
+  <section>
+    <div class="rv">
+      <p class="small">Save the date</p>
+      <h2 style="margin-top:.5rem">Scratch to discover the date</h2>
+      <div class="reveal-box">
+        <div class="hearts" aria-label="12 December 2026">
+          <div class="heart"><b>12</b><small>SATURDAY</small></div>
+          <div class="heart"><b>Dec</b><small>MONTH</small></div>
+          <div class="heart"><b>2026</b><small>YEAR</small></div>
+        </div>
+        <canvas id="scratch" aria-hidden="true"></canvas>
+      </div>
+      <button class="skip" id="skip" type="button">Reveal date</button>
+      <p class="fulldate" id="fd">Saturday, 12 December 2026</p>
+      <div id="cd" role="timer" aria-live="off">
+        <div><b id="d">0</b><small>days</small></div>
+        <div><b id="h">00</b><small>hours</small></div>
+        <div><b id="m">00</b><small>mins</small></div>
+        <div><b id="s">00</b><small>secs</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section>
+    <div class="rv">
+      <h2>Join us for lunch</h2>
+      <p class="small" style="margin-top:.5rem">Celebrate with us on our wedding day</p>
+
+      <article class="event">
+        <svg viewBox="0 0 120 90" aria-hidden="true"><path d="M60 8a30 30 0 0 0-30 30v6h60v-6A30 30 0 0 0 60 8zm-4-6h8v6h-8zM18 50h84c0 8-6 14-14 14H32c-8 0-14-6-14-14zM8 68h104v8H8zM44 78h32v8H44z"/></svg>
+        <div><span class="tag">Wedding lunch</span></div>
+        <h3>Saturday, 12 December 2026</h3>
+        <p class="time">1:00 pm onwards</p>
+        <p class="v" id="venue">City Palace<br>Ambedkar Chowk, Chandpur</p>
+        <a class="btn loc" id="loc" href="#" target="_blank" rel="noopener">View location on Google Maps</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Compliments -->
+  <section>
+    <div class="rv">
+      <p class="small">With best compliments from</p>
+      
+      <ul class="names-list" id="names"></ul>
+      <p class="small" style="margin-top:2rem">And all our near and dear ones</p>
+    </div>
+  </section>
+
+<footer>
+  Warm regards,<br>
+  Mr. &amp; Mrs. Mohd Ashraf Jafri<br>
+  +91 9045636557
+</footer>
+</main>
+
+<script>
+/* ===== Edit these ===== */
+const CONFIG = {
+  date: new Date("2026-12-12T00:00:00+05:30"),
+  // Paste the Google Maps link here later. Empty = button shows "Location coming soon".
+  location: "https://maps.app.goo.gl/CxA9Z2wmYW6WmH696",
+  // Venue text shown above the button
+  venue: "City Palace<br>Ambedkar Chowk, Chandpur",
+  guests: [
+    ["Ashraf Jafri",""],["Aslam Jafri",""],["Arshad Jafri",""],
+    ["Anas Nadeem",""],["Rafey Jafri",""],["Huzaifah Jafri",""],
+    ["Taha Jafri",""],["Ubaidah Jafri",""]
+  ]
+};
+
+const $ = id => document.getElementById(id);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Curtain */
+$("openBtn").addEventListener("click", () => {
+  $("curtain").classList.add("open");
+  document.body.classList.remove("lock");
+  document.body.classList.add("started");
+  setTimeout(() => { $("curtain").style.display = "none"; }, reduce ? 50 : 3200);
+});
+
+/* Gold dust */
+(() => {
+  const box = $("dust");
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement("i");
+    p.style.cssText = `left:${Math.random()*100}%;--dx:${(Math.random()*80-40)}px;animation-duration:${14+Math.random()*14}s;animation-delay:${-Math.random()*20}s;width:${2+Math.random()*3}px;height:${2+Math.random()*3}px`;
+    box.appendChild(p);
+  }
+})();
+
+/* Venue + location button */
+$("venue").innerHTML = CONFIG.venue;
+(() => {
+  const a = $("loc");
+  if (CONFIG.location) a.href = CONFIG.location;
+  else { a.classList.add("off"); a.textContent = "Location coming soon"; a.removeAttribute("href"); a.setAttribute("aria-disabled","true"); }
+})();
+
+/* Countdown */
+function tick(){
+  let t = Math.max(0, CONFIG.date - new Date());
+  const d = Math.floor(t/864e5); t -= d*864e5;
+  const h = Math.floor(t/36e5); t -= h*36e5;
+  const m = Math.floor(t/6e4); t -= m*6e4;
+  $("d").textContent = d; $("h").textContent = String(h).padStart(2,"0");
+  $("m").textContent = String(m).padStart(2,"0"); $("s").textContent = String(Math.floor(t/1e3)).padStart(2,"0");
+}
+tick(); setInterval(tick, 1000);
+
+/* Scratch card */
+(() => {
+  const c = $("scratch"), ctx = c.getContext("2d");
+  let drawing = false, revealed = false, moves = 0;
+  function paint(){
+    const r = c.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+    c.width = r.width * dpr; c.height = r.height * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    const g = ctx.createLinearGradient(0,0,r.width,r.height);
+    g.addColorStop(0,"#8c7142"); g.addColorStop(.5,"#d9bd86"); g.addColorStop(1,"#8c7142");
+    ctx.globalCompositeOperation = "source-over"; ctx.fillStyle = g; ctx.fillRect(0,0,r.width,r.height);
+    ctx.fillStyle = "rgba(30,20,10,.55)"; ctx.font = "italic 22px Georgia, serif"; ctx.textAlign = "center";
+    ctx.fillText("Scratch here", r.width/2, r.height/2 + 6);
+  }
+  function show(){
+    if (revealed) return; revealed = true;
+    c.classList.add("done"); $("fd").classList.add("show"); $("cd").classList.add("show"); $("skip").style.display = "none";
+  }
+  function cleared(){
+    const w = c.width, h = c.height, step = 16, d = ctx.getImageData(0,0,w,h).data; let n = 0, tot = 0;
+    for (let y = 0; y < h; y += step) for (let x = 0; x < w; x += step){ tot++; if (d[(y*w+x)*4+3] < 20) n++; }
+    return n / tot;
+  }
+  function scratch(e){
+    if (!drawing) return;
+    const r = c.getBoundingClientRect();
+    ctx.globalCompositeOperation = "destination-out"; ctx.beginPath();
+    ctx.arc(e.clientX - r.left, e.clientY - r.top, 22, 0, 7); ctx.fill();
+    if (++moves % 8 === 0 && cleared() > .45) show();
+  }
+  paint(); addEventListener("resize", () => { if (!revealed) paint(); });
+  c.addEventListener("pointerdown", e => { drawing = true; c.setPointerCapture(e.pointerId); scratch(e); });
+  c.addEventListener("pointermove", scratch);
+  c.addEventListener("pointerup", () => drawing = false);
+  c.addEventListener("pointercancel", () => drawing = false);
+  $("skip").addEventListener("click", show);
+  if (reduce) show();
+})();
+
+/* Guest list */
+const ul = $("names");
+CONFIG.guests.forEach(([n, s], i) => {
+  const li = document.createElement("li");
+  li.style.transitionDelay = (i * 0.12) + "s";
+  li.innerHTML = n + (s ? "<small>" + s + "</small>" : "");
+  ul.appendChild(li);
+});
+
+/* Scroll reveals */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); }
+}), {threshold:.15});
+document.querySelectorAll(".rv").forEach(n => io.observe(n));
+const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ ul.classList.add("on"); io2.disconnect(); } }), {threshold:.2});
+io2.observe(ul);
+</script>
+</body>
+</html>
