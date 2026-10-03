@@ -53,7 +53,25 @@ section{padding:4.5rem 1.5rem;text-align:center}
 .open{pointer-events:none}
 .tap{position:relative;z-index:3;text-align:center;transition:opacity .6s ease}
 .open .tap{opacity:0}
-.tap .script{font-family:var(--script);font-size:3rem;line-height:1.1;color:var(--text)}
+.tap .script{
+  font-family:var(--script);
+  font-size:clamp(2rem,7vw,2.55rem);
+  line-height:1.15;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.05rem;
+}
+.tap .curtain-name{display:block;white-space:nowrap}
+.tap .curtain-and{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:.75em;
+  line-height:1;
+  color:var(--gold);
+  margin:.05rem 0;
+}
 .tap p{color:var(--muted);margin:.5rem 0 2rem}
 .tap .small{font-size:1.15rem;letter-spacing:.05em}
 button,.btn{font:inherit;cursor:pointer;color:var(--text);background:transparent;border:1px solid var(--gold);padding:.8rem 2rem;border-radius:999px;text-decoration:none;display:inline-block;transition:background .4s,color .4s}
@@ -175,7 +193,11 @@ footer{padding:3rem 1.5rem 4rem;text-align:center;color:var(--muted);font-size:.
   <div class="panel l"></div><div class="panel r"></div><div class="valance"></div>
   <div class="tap">
     <p class="small">DAWAT-E-WALIMA</p>
-    <div class="script">Hamzah Jafri &amp; Mariya Siddiqui</div>
+    <div class="script">
+      <span class="curtain-name">Hamzah Jafri</span>
+      <span class="curtain-and">&amp;</span>
+      <span class="curtain-name">Mariya Siddiqui</span>
+    </div>
     <p>Draw the curtains to begin</p>
     <button id="openBtn" type="button">Open invitation</button>
   </div>
