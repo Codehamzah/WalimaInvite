@@ -7,7 +7,7 @@
 <title>Hamzah Jafri &amp; Mariya Siddiqui — Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Great+Vibes&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Amiri:wght@400;700&family=Great+Vibes&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0E0A0F; --wine:#2B0E1D; --wine2:#431528; --card:#18101A; --line:#3A2A36;
@@ -31,13 +31,21 @@ section{padding:4.5rem 1.5rem;text-align:center}
 .rule{width:4rem;height:1px;background:var(--gold);margin:1.5rem auto;opacity:.7}
 
 /* ---------- Curtain intro ---------- */
-#curtain{position:fixed;inset:0;z-index:50;display:grid;place-items:center;pointer-events:auto}
+#curtain{
+  position:fixed;
+  inset:0;
+  z-index:50;
+  display:grid;
+  place-items:center;
+  pointer-events:auto;
+}
+
 .panel{position:absolute;top:0;bottom:0;width:50.5%;transition:transform 2.4s cubic-bezier(.7,0,.25,1);
   background:
    repeating-linear-gradient(90deg,rgba(0,0,0,.35) 0 6px,rgba(255,255,255,.05) 14px,rgba(0,0,0,.3) 26px,transparent 34px),
    linear-gradient(180deg,var(--wine2),var(--wine) 70%,#1a0812)}
-.panel.l{left:0;border-right:2px solid var(--gold);box-shadow:inset -18px 0 30px rgba(0,0,0,.45)}
-.panel.r{right:0;border-left:2px solid var(--gold);box-shadow:inset 18px 0 30px rgba(0,0,0,.45)}
+.panel.l{left:0;border-right:0;box-shadow:inset -18px 0 30px rgba(0,0,0,.45)}
+.panel.r{right:0;border-left:0;box-shadow:inset 18px 0 30px rgba(0,0,0,.45)}
 .valance{position:absolute;top:0;left:0;right:0;height:3.2rem;z-index:2;transition:transform 1.4s ease .6s;
   background:linear-gradient(180deg,#2c0f1e,var(--wine2));border-bottom:2px solid var(--gold);
   box-shadow:0 8px 20px rgba(0,0,0,.5)}
@@ -56,7 +64,44 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
 
 /* ---------- Hero ---------- */
 .hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:5rem}
-.bless{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--muted);max-width:22rem;margin:0 auto}
+.bismillah{
+  font-family:"Amiri",serif;
+  font-size:clamp(2rem,9vw,2.7rem);
+  line-height:1.3;
+  color:var(--gold);
+  margin:0 auto 1.5rem;
+  direction:rtl;
+}
+.ayat{
+  font-family:"Amiri",serif;
+  font-size:clamp(.95rem,4.2vw,1.2rem);
+  line-height:2;
+  color:var(--text);
+  max-width:28rem;
+  margin:0 auto 1rem;
+  direction:rtl;
+  text-align:center;
+}
+.bless{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.15rem;
+  color:var(--muted);
+  max-width:25rem;
+  margin:0 auto;
+  line-height:1.7;
+}
+.bless .inviter{
+  display:block;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:1.3rem;
+  color:var(--text);
+  margin-bottom:.35rem;
+}
+.bless .invite-text{
+  display:block;
+}
 .names{font-family:var(--script);font-weight:400;font-size:clamp(2.35rem,10vw,3.35rem);line-height:1.05;margin:1.5rem 0 1rem;white-space:nowrap}
 .names span{display:block}
 .names .of{font-family:var(--sans);font-weight:300;font-size:.78rem;line-height:1.35;color:var(--muted);margin-top:.75rem;letter-spacing:.02em}
@@ -141,7 +186,13 @@ footer{padding:3rem 1.5rem 4rem;text-align:center;color:var(--muted);font-size:.
 <main>
   <!-- Hero -->
   <section class="hero">
-    <p class="bless item">With the blessings of Almighty Allah and our beloved families, we joyfully invite you to the Walima of our beloved son.</p>
+    <div class="item">
+      <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+      <p class="bless">
+        <span class="inviter">Mr. Arshad Jafri</span>
+        <span class="invite-text">cordially invites you to grace the auspicious occasion<br>of the marriage of his beloved nephew.</span>
+      </p>
+    </div>
     <h1 class="names item">
       <span>Ahmad Hamzah Jafri</span>
       <span class="of">S/O Mr. Ashraf Jafri</span>
@@ -151,6 +202,13 @@ footer{padding:3rem 1.5rem 4rem;text-align:center;color:var(--muted);font-size:.
     </h1>
     <div class="rule item" style="margin-top:.5rem"></div>
     <div class="cue" aria-hidden="true"></div>
+  </section>
+
+  <!-- Qur'anic Ayat -->
+  <section style="padding-top:1rem;padding-bottom:2rem">
+    <div class="ayat" lang="ar" dir="rtl">
+      وَمِنْ ءَايَـٰتِهِۦٓ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوٓا۟ إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ
+    </div>
   </section>
 
   <!-- Scratch date + countdown -->
@@ -220,7 +278,7 @@ const CONFIG = {
   // Venue text shown above the button
   venue: "City Palace<br>Ambedkar Chowk, Chandpur",
   guests: [
-    ["Ashraf Jafri",""],["Aslam Jafri",""],["Arshad Jafri",""],
+    ["Aslam Jafri",""],
     ["Anas Nadeem",""],["Rafey Jafri",""],["Huzaifah Jafri",""],
     ["Taha Jafri",""],["Ubaidah Jafri",""]
   ]
