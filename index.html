@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="dark">
-<title>Hamzah Jafri &amp; Mariya Siddiqui — Wedding Invitation</title>
+<title>Hamzah Jafri — Wedding Invitation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Amiri:wght@400;700&family=Great+Vibes&family=Jost:wght@300;400&display=swap" rel="stylesheet">
@@ -18,6 +18,7 @@
   color-scheme:dark; box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
+
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--ink) radial-gradient(ellipse at 50% 0,#1d0c18 0,var(--ink) 60%) fixed;color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -51,27 +52,40 @@ section{padding:4.5rem 1.5rem;text-align:center}
   box-shadow:0 8px 20px rgba(0,0,0,.5)}
 .open .l{transform:translateX(-102%)} .open .r{transform:translateX(102%)} .open .valance{transform:translateY(-110%)}
 .open{pointer-events:none}
+
 .tap{position:relative;z-index:3;text-align:center;transition:opacity .6s ease}
 .open .tap{opacity:0}
-.tap .script{
-  font-family:var(--script);
-  font-size:clamp(2rem,7vw,2.55rem);
-  line-height:1.15;
-  color:var(--text);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:.05rem;
-}
-.tap .curtain-name{display:block;white-space:nowrap}
-.tap .curtain-and{
-  font-family:var(--serif);
-  font-style:italic;
-  font-size:.75em;
-  line-height:1;
+
+
+.tap .bismillah-curtain{
+  position:absolute;
+  top:-8.5rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:100vw;
+  font-family:"Amiri",serif;
+  font-size:clamp(2rem,8vw,2.8rem);
+  line-height:1.35;
   color:var(--gold);
-  margin:.05rem 0;
+  direction:rtl;
+  text-align:center;
+  margin:0;
+  font-weight:400;
 }
+
+
+.tap .walima-title{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(1.8rem,7vw,2.4rem);
+  line-height:1.2;
+  letter-spacing:.12em;
+  color:var(--text);
+  text-transform:uppercase;
+  margin-top:.25rem;
+}
+
+
 .tap p{color:var(--muted);margin:.5rem 0 2rem}
 .tap .small{font-size:1.15rem;letter-spacing:.05em}
 button,.btn{font:inherit;cursor:pointer;color:var(--text);background:transparent;border:1px solid var(--gold);padding:.8rem 2rem;border-radius:999px;text-decoration:none;display:inline-block;transition:background .4s,color .4s}
@@ -90,6 +104,7 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   padding-bottom:1rem;
   margin-bottom:-5svh;
 }
+
 .bismillah{
   font-family:"Amiri",serif;
   font-size:clamp(2rem,9vw,2.7rem);
@@ -98,6 +113,7 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   margin:0 auto 1.5rem;
   direction:rtl;
 }
+
 .ayat{
   font-family:"Amiri",serif;
   font-size:clamp(.95rem,4.2vw,1.2rem);
@@ -108,6 +124,7 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   direction:rtl;
   text-align:center;
 }
+
 .bless{
   font-family:var(--serif);
   font-style:italic;
@@ -117,6 +134,7 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   margin:0 auto;
   line-height:1.7;
 }
+
 .bless .inviter{
   display:block;
   font-family:var(--serif);
@@ -125,9 +143,11 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   color:var(--text);
   margin-bottom:.35rem;
 }
+
 .bless .invite-text{
   display:block;
 }
+
 .names{font-family:var(--script);font-weight:400;font-size:clamp(2.35rem,10vw,3.35rem);line-height:1.05;margin:1.5rem 0 1rem;white-space:nowrap}
 .names span{display:block}
 .names .of{font-family:var(--sans);font-weight:300;font-size:.78rem;line-height:1.35;color:var(--muted);margin-top:.75rem;letter-spacing:.02em}
@@ -149,6 +169,7 @@ button:focus-visible,.btn:focus-visible,a:focus-visible{outline:2px solid var(--
   background:linear-gradient(var(--gold),transparent);
   animation:cue 2.6s ease-in-out infinite
 }
+
 @keyframes cue{50%{transform:translateY(8px);opacity:.4}}
 #dust{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
 #dust i{position:absolute;top:-10px;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:0;animation:fall linear infinite}
@@ -206,12 +227,8 @@ footer{padding:3rem 1.5rem 4rem;text-align:center;color:var(--muted);font-size:.
 <div id="curtain">
   <div class="panel l"></div><div class="panel r"></div><div class="valance"></div>
   <div class="tap">
-    <p class="small">DAWAT-E-WALIMA</p>
-    <div class="script">
-      <span class="curtain-name">Hamzah Jafri</span>
-      <span class="curtain-and">&amp;</span>
-      <span class="curtain-name">Mariya Siddiqui</span>
-    </div>
+  <!--  <div class="bismillah-curtain" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div> -->
+    <div class="walima-title">DAWAT-E-WALIMA</div>
     <p>Draw the curtains to begin</p>
     <button id="openBtn" type="button">Open invitation</button>
   </div>
@@ -223,18 +240,18 @@ footer{padding:3rem 1.5rem 4rem;text-align:center;color:var(--muted);font-size:.
   <!-- Hero -->
   <section class="hero">
     <div class="item">
-      <div class="bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+      <div class="bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
       <p class="bless">
         <span class="inviter">Mr. Arshad Jafri</span>
-        <span class="invite-text">cordially invites you to grace the auspicious occasion<br>of the Walima of his beloved nephew</span>
+        <span class="invite-text">cordially invites you to grace the auspicious occasion<br>of the Walima of his beloved nephew, grandson of (Late) Mr. Irshad Hussain Jafri </span>
       </p>
     </div>
     <h1 class="names item">
       <span>Ahmad Hamzah Jafri</span>
-      <span class="of">S/O Mr. Ashraf Jafri</span>
+      <span class="of">S/O Mr. & Mrs. Mohd Ashraf Jafri</span>
       <span class="and">with</span>
-      <span>Mariya Siddiqui</span>
-      <span class="of">D/O Mr. Rizwan Siddiqui</span>
+      <span>The Beloved Daughter</span>
+      <span class="of">Of Mr. & Mrs. Rizwan Ahsan Siddiqui</span>
     </h1>
     <div class="rule item" style="margin-top:.5rem"></div>
     <div class="cue" aria-hidden="true"></div>
@@ -301,7 +318,8 @@ footer{padding:3rem 1.5rem 4rem;text-align:center;color:var(--muted);font-size:.
 <footer>
   Warm regards,<br>
   Mr. &amp; Mrs. Mohd Ashraf Jafri<br>
-  +91 9045636557
+  +91 9045636557<br>
+  +91 7247885253
 </footer>
 </main>
 
@@ -314,9 +332,9 @@ const CONFIG = {
   // Venue text shown above the button
   venue: "City Palace<br>Ambedkar Chowk, Chandpur",
   guests: [
-    ["Aslam Jafri",""],
-    ["Anas Nadeem",""],["Rafey Jafri",""],["Huzaifah Jafri",""],
-    ["Taha Jafri",""],["Ubaidah Jafri",""]
+    ["Mohd Aslam Jafri",""],
+    ["Anas Nadeem",""],["Ahmad Rafey Jafri",""],["Ahmad Huzaifah Jafri",""],
+    ["Ahmad Taha Jafri",""],["Ahmad Ubaidah Jafri",""]
   ]
 };
 
